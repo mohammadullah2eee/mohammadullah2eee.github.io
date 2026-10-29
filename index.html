@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Mohammad Ullah | EEE Portfolio</title>
+<script>function fb(i){var s=['.jpeg','.JPG','.JPEG','.png'],n=+(i.dataset.n||0);if(n>=s.length){i.remove();return}i.dataset.n=n+1;i.src=i.src.replace(/\.[A-Za-z]+$/,s[n])}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--navy:#0a1628;--navy2:#0f2038;--deep:#07101d;--blue:#3b9eff;--blue2:#1d7be0;--ln:#1d3250;
+--s-bg:#fff;--s-ink:#0f1b2d;--s-mute:#566780;--s-card:#f3f7fc;--s-line:#dbe4ef;--s-chip:#e8f1fb;--s-chipink:#2a4a73;--s-int:#eaf3fd;--s-acc:#1d7be0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--s-bg:#0d1829;--s-ink:#e8eff8;--s-mute:#93a4ba;--s-card:#13243b;--s-line:#223654;--s-chip:#1a2f4d;--s-chipink:#bcd3ee;--s-int:#10223a;--s-acc:#5db0ff}}
+:root[data-theme="dark"]{--s-bg:#0d1829;--s-ink:#e8eff8;--s-mute:#93a4ba;--s-card:#13243b;--s-line:#223654;--s-chip:#1a2f4d;--s-chipink:#bcd3ee;--s-int:#10223a;--s-acc:#5db0ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:400 16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--navy);color:#e8eff8}
+h1,h2,h3,h4,p{margin:0}
+a{color:inherit;text-decoration:none}
+.ic{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.fill{fill:currentColor;stroke:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(8,17,31,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;font-size:28px;letter-spacing:-.02em;color:#fff}.logo span{color:var(--blue)}
+.links{display:flex;align-items:center;gap:26px;overflow-x:auto;scrollbar-width:none}
+.links a{position:relative;font-size:14px;font-weight:500;color:#c6d3e4;padding:22px 0;white-space:nowrap}
+.links a:hover{color:#fff}
+.links a[aria-current="true"]{color:#fff}
+.links a[aria-current="true"]::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:2px;background:var(--blue);border-radius:2px}
+.theme{background:none;border:0;color:#c6d3e4;cursor:pointer;padding:8px;display:grid;place-items:center}
+.theme:hover{color:#fff}
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0b1d37 0%,#08121f 100%);padding:64px 0 72px}
+.hero .waves{position:absolute;left:-60px;top:80px;width:520px;height:300px;opacity:.5;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.hello{font-size:18px;font-weight:600;color:#dbe6f5}
+.hero h1{font-size:clamp(40px,6vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:4px 0 12px}
+.hero h1 span{color:var(--blue)}
+.sub{font-size:19px;font-weight:600;color:#fff;margin-bottom:16px}
+.lead{max-width:520px;color:#c6d3e4;font-size:15.5px;margin-bottom:26px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:11px 24px;border-radius:99px;font-weight:600;font-size:14.5px;cursor:pointer;font-family:inherit;border:1.5px solid var(--blue);color:#fff;background:none;transition:.2s}
+.btn.fill{background:linear-gradient(180deg,#4aa8ff,#2b8cf0);border-color:transparent}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(59,158,255,.25)}
+.btn .ic{width:17px;height:17px}
+.social{display:flex;gap:6px}
+.social a{width:40px;height:40px;display:grid;place-items:center;color:#e8eff8;border-radius:10px}
+.social a:hover{color:var(--blue);background:rgba(255,255,255,.06)}
+.hero-art{display:flex;align-items:center;justify-content:center;gap:28px}
+.photo{width:260px;height:300px;border-radius:8px;border:2px solid #2f7fd6;background:linear-gradient(145deg,#12294a,#0b1a30);position:relative;overflow:hidden;display:grid;place-items:center;font-size:72px;font-weight:800;color:var(--blue);box-shadow:0 0 0 6px rgba(47,127,214,.08)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{border-left:3px solid var(--blue);padding-left:14px;display:grid;gap:2px;font-size:14px;color:#9fb2c9}
+.tag b{color:#fff}
+/* sections */
+section{padding:72px 0}
+.light{background:var(--s-bg);color:var(--s-ink)}
+.dark{background:var(--navy)}
+.deep{background:var(--deep)}
+.h{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.h .ic{width:30px;height:30px;color:var(--s-acc)}
+.dark .h .ic,.deep .h .ic{color:var(--blue)}
+.h h2{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.bar{width:5px;height:34px;border-radius:3px;background:#0284c7}
+.mute{color:var(--s-mute)}
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.about p{font-size:16px}
+.about b{font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px}
+.fact{display:flex;gap:12px;align-items:flex-start;padding-right:14px}
+.fact+.fact{padding-left:18px;border-left:1px solid var(--s-line)}
+.fact .ic{color:var(--s-acc);margin-top:2px}
+.fact b{display:block;font-size:14px}.fact span{font-size:14px;color:var(--s-mute)}
+.int{background:var(--s-int);border-radius:14px;padding:26px 28px}
+.int h3{display:flex;gap:10px;align-items:center;font-size:17px;font-weight:700;margin-bottom:18px}
+.int h3 .ic{color:var(--s-acc)}
+.int ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.int li{display:flex;gap:14px;align-items:center;font-size:15px}
+.int li .ic{color:var(--s-acc);width:24px;height:24px}
+/* cards on dark */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--navy2);border:1px solid var(--ln);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.thumb{position:relative;height:110px;display:grid;place-items:center;color:rgba(255,255,255,.55);overflow:hidden}
+.thumb .ic{width:38px;height:38px}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb.photo16{height:auto;aspect-ratio:16/9;font-size:13px;text-align:center}
+.t0{background:linear-gradient(135deg,#3b2a14,#1a2a3c)}.t1{background:linear-gradient(135deg,#17361f,#16293a)}.t2{background:linear-gradient(135deg,#0a1f5c,#0a1330)}.t3{background:linear-gradient(135deg,#2c3b4d,#121c2b)}
+.cbody{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15px;font-weight:700;color:#fff}
+.card p{font-size:13px;color:#a9bad0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:#1a2d49;color:#d2e0f2;border-radius:99px;padding:3px 11px;font-size:11.5px;font-weight:500}
+.light .chip{background:var(--s-chip);color:var(--s-chipink)}
+.card .more{margin-top:auto;padding-top:6px;color:var(--blue);font-size:13px;font-weight:600}
+.date{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card .role{color:#8fc4ff;font-size:13.5px;font-weight:600}
+.cbody.big{padding:22px;gap:10px}.cbody.big h3{font-size:18px}.cbody.big p{font-size:14px}
+/* two columns on light */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.two>div:first-child{padding-right:48px;border-right:1px solid var(--s-line)}
+.two>div+div{padding-left:48px}
+.sk{display:grid;gap:22px}
+.skrow{display:flex;gap:16px;align-items:flex-start}
+.tile{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;color:#fff;flex:none}
+.tile .ic{width:22px;height:22px}
+.k0{background:linear-gradient(135deg,#1fb58f,#0d8f71)}.k1{background:linear-gradient(135deg,#5a7cf0,#3d55c9)}.k2{background:linear-gradient(135deg,#8a5cf0,#5d3cc4)}.k3{background:linear-gradient(135deg,#1f4f8f,#12335e)}
+.k4{background:linear-gradient(135deg,#0ea5c6,#0a7894)}.k5{background:linear-gradient(135deg,#e0883a,#b9611b)}.k6{background:linear-gradient(135deg,#d6457a,#a32a58)}.k7{background:linear-gradient(135deg,#5a8f2e,#3b6a1a)}
+.skrow h4{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.tl{position:relative;display:grid;gap:22px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--blue)}
+.ti{position:relative}
+.ti::before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.ti .top{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.ti h4{font-size:15.5px;font-weight:700}
+.ti time{font-size:13px;color:var(--s-mute);white-space:nowrap}
+.ti p{font-size:14px;color:var(--s-mute);margin-top:2px}
+/* contact */
+.cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.cgrid .h{margin-bottom:22px}
+.clead{color:#a9bad0;font-size:17px;max-width:460px;margin-bottom:10px}
+.ci{display:flex;align-items:center;gap:16px;margin-top:16px}
+.cico{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(2,132,199,.18);color:#1c9bdc}
+.ci small{display:block;color:#8ea2bb;font-size:13px;line-height:1.3}
+.ci strong,.ci a{font-weight:700;word-break:break-word}
+.ci a:hover{color:var(--blue)}
+form{border:1px solid var(--ln);border-radius:22px;background:#0f1d33;padding:26px}
+label{display:block;font-weight:700;font-size:13px;margin-bottom:8px;color:#dbe6f5}
+.f{margin-bottom:18px}
+input,textarea{width:100%;background:#050912;color:#e8eff8;border:1px solid var(--ln);border-radius:14px;padding:13px 16px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+::placeholder{color:#7d8aa0}
+.send{width:100%;border:0;border-radius:14px;padding:14px;background:#0284c7;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.send:hover{background:#0396e0}
+.note{color:#8ea2bb;font-size:13px;margin-top:12px;min-height:1.3em}
+footer{background:var(--deep);border-top:1px solid var(--ln);padding:26px 0 calc(26px + env(safe-area-inset-bottom,0px));font-size:13px;color:#8ea2bb}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer .social a{color:#c6d3e4}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){
+ .hero-grid,.about,.cgrid,.two,.grid2{grid-template-columns:1fr}
+ .hero-art{order:-1;justify-content:flex-start}
+ .photo{width:200px;height:230px;font-size:56px}
+ .two>div:first-child{padding:0 0 36px;border:0;border-bottom:1px solid var(--s-line);margin-bottom:36px}
+ .two>div+div{padding-left:0}
+ .cgrid{gap:32px}
+ .links{gap:18px}
+}
+@media (max-width:560px){.grid4{grid-template-columns:1fr}.facts{grid-template-columns:1fr;gap:16px}.fact+.fact{padding-left:0;border:0}.tag{display:none}.logo{font-size:24px}}
+</style>
+</head>
+<body id="top">
+<!-- EDIT YOUR DATA in the DATA block at the bottom of this file. Text in [square brackets] is a placeholder. -->
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#home" aria-label="Mohammad Ullah, home">M<span>U</span></a>
+  <nav class="links" aria-label="Main">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#internships">Internships</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="theme" id="theme" aria-label="Switch light or dark theme"></button>
+</div></header>
+
+<main>
+<section class="hero" id="home" style="padding:64px 0 72px">
+  <svg class="waves" viewBox="0 0 520 300" fill="none" stroke="#3b9eff" stroke-width="1" aria-hidden="true"><path d="M0 200C80 120 140 260 240 190S400 90 520 150"/><path d="M0 220C80 140 140 280 240 210S400 110 520 170" opacity=".7"/><path d="M0 240C80 160 140 300 240 230S400 130 520 190" opacity=".5"/><path d="M0 260C80 180 140 320 240 250S400 150 520 210" opacity=".35"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hello">Hello, I’m</p>
+      <h1 id="hName"></h1>
+      <p class="sub" id="hSub"></p>
+      <p class="lead" id="hLead"></p>
+      <div class="btns">
+        <a class="btn fill" id="cvBtn" href="assets/cv.pdf" download><i data-i="user"></i>Download CV</a>
+        <a class="btn" href="#contact"><i data-i="plus"></i>Contact Me</a>
+      </div>
+      <div class="social" id="hSocial"></div>
+    </div>
+    <div class="hero-art">
+      <div class="photo" id="photo" role="img" aria-label="Profile photo"><span id="ini"></span><img src="images/profile.jpg" alt="Mohammad Ullah" onerror="fb(this)"></div>
+      <div class="tag"><b>Build</b><span>Learn</span><span>Innovate</span><span>Make an Impact</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="about"><div class="wrap">
+  <div class="about">
+    <div>
+      <div class="h"><i data-i="user"></i><h2>About Me</h2></div>
+      <div id="aboutText"></div>
+      <div class="facts" id="facts"></div>
+    </div>
+    <aside class="int"><h3><i data-i="user"></i>My Interests</h3><ul id="interests"></ul></aside>
+  </div>
+</div></section>
+
+<section class="dark" id="projects"><div class="wrap">
+  <div class="h"><i data-i="folder"></i><h2>Featured Projects</h2></div>
+  <div class="grid4" id="projList"></div>
+</div></section>
+
+<section class="light" id="skills"><div class="wrap">
+  <div class="two">
+    <div><div class="h"><i data-i="gear"></i><h2>Technical Skills</h2></div><div class="sk" id="skList"></div></div>
+    <div><div class="h"><i data-i="cap"></i><h2>Education</h2></div><div class="tl" id="eduList"></div></div>
+  </div>
+</div></section>
+
+<section class="dark" id="internships"><div class="wrap">
+  <div class="h"><i data-i="briefcase"></i><h2>Internships</h2></div>
+  <div class="grid2" id="internList"></div>
+</div></section>
+
+<section class="light" id="experience"><div class="wrap">
+  <div class="two">
+    <div><div class="h"><i data-i="briefcase"></i><h2>Experience</h2></div><div class="tl" id="expList"></div></div>
+    <div><div class="h"><i data-i="award"></i><h2>Awards &amp; Recognition</h2></div><div class="tl" id="awList"></div></div>
+  </div>
+</div></section>
+
+<section class="deep" id="contact"><div class="wrap">
+  <div class="cgrid">
+    <div>
+      <div class="h"><span class="bar"></span><h2>Contact Me</h2></div>
+      <p class="clead">I am open to research collaborations, academic inquiries and engineering opportunities. Reach out via email or connect with me on social platforms.</p>
+      <div id="cItems"></div>
+    </div>
+    <form id="cform">
+      <div class="f"><label for="cn">Your Name</label><input id="cn" type="text" placeholder="Name" required autocomplete="name"></div>
+      <div class="f"><label for="ce">Your Email</label><input id="ce" type="email" placeholder="Email" required autocomplete="email"></div>
+      <div class="f"><label for="cm">Message</label><textarea id="cm" placeholder="Your message..." required></textarea></div>
+      <button class="send" type="submit">Send Message</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><p id="copy"></p><div class="social" id="fSocial"></div></div></footer>
+
+<script>
+/* ===================== EDIT YOUR DATA HERE ===================== */
+const DATA = {
+  name: ["Mohammad","Ullah"],
+  subtitle: "Electrical & Electronic Engineering Student | RUET",
+  lead: "I’m an EEE student at Rajshahi University of Engineering & Technology (RUET) who likes turning ideas into working hardware and software. I’m exploring IoT, embedded systems and photonic integrated circuits (PICs). Basically I learn best by building.",
+  email: "mohammadullah.eee@gmail.com",
+  github: "https://github.com/mohammadullah2eee",
+  youtube: "https://youtube.com/@themathscilab-eee?si=REfn4_XTAbgmFVZ9",
+  linkedin: "https://www.linkedin.com/in/mohammad-ullah-3400123a5",
+  scholar: "",
+  website: "",
+  location: "Rajshahi, Bangladesh",
+  about: ["I am a proud RUETian pursuing my Bachelor’s degree in Electrical and Electronic Engineering at RUET. I enjoy building hands-on <b>IoT & embedded systems projects</b> and my undergraduate thesis explores <b>photonic integrated circuits (PICs)</b>.",
+          "I am motivated by turning ideas into working technology and I want to grow into research and engineering roles where I can design, test and improve it. My thesis work on photonic integrated circuits has made me want to contribute to faster, more efficient communication technology through research."],
+  facts: [["pin","Location","Rajshahi, Bangladesh"],["cap","University","RUET"],["cap","Degree","B.Sc. in EEE"]],
+  interests: [["cpu","IoT & Embedded Systems"],["layers","Photonic Integrated Circuits"],["zap","Printed Circuit Board (PCB) Design"],["flask","Research & Innovation"],["globe","Open Source & Community"]],
+  projects: [
+    {t:"Mach–Zehnder Interferometer (MZI) design",d:"Designed a silicon photonic MZI layout in KLayout using the SiEPIC PDK.",tags:["KLayout","SiEPIC","Silicon Photonics"],link:"https://github.com/mohammadullah2eee/mzi-klayout"},
+    {t:"Smart Fuel Station Management",d:"An ESP32-based vehicle entry/exit and capacity-monitoring prototype with sensors, servo barriers, LCD status, alarms and a web dashboard.",tags:["ESP32","IoT","Web dashboard","Sensors"],link:""},
+    {t:"Smart Cart System",d:"A prototype concept combining load measurement, identification, an LCD and audio feedback to support smarter item verification and inventory tracking.",tags:["Embedded systems","Load cell","RFID concept"],link:""},
+    {t:"Smart Poultry House Monitoring",d:"A low-cost monitoring concept using gas and sound sensing, local alerts and microcontrollers to help improve poultry-house awareness.",tags:["ESP32","Sensor","Embedded System","IoT"],link:""},
+    {t:"Line Following Robot (LFR) with Obstacle Avoidance",d:"A robot that follows a marked line path and detects and avoids obstacles on its way.",tags:["Robotics","Embedded systems","Sensors"],link:""},
+    {t:"Home Automation",d:"A home automation system I built to control household appliances automatically and conveniently.",tags:["Home automation","Embedded systems","IoT"],link:""}
+  ],
+  skills: [
+    ["code","Code & Software",["KLayout","SiEPIC PDK","MZI layout design","Ansys Lumerical","C / C++ for Arduino","Python"]],
+    ["power","Circuit & Simulation",["MATLAB","MATLAB Simulink","VISIO"]],
+    ["cpu","Embedded & IoT",["ESP32 / Arduino","Sensor integration","Wi-Fi & web servers","Microcontroller projects"]],
+    ["layers","Printed Circuit Board (PCB) Design", ["EasyEDA"]],
+    ["gear","VLSI Circuit Design", ["Microwind","KLayout"]],
+    ["users","Research & Collaboration",["Technical documentation","Team projects","Presentation & communication"]],
+    ["zap","Electronics",["Analog & digital circuits","Measurements & testing","LCD / I²C interfaces","Prototyping & debugging"]]
+  ],
+  education: [
+    ["B.Sc. in Electrical and Electronic Engineering","Rajshahi University of Engineering & Technology (RUET) · Batch 2022","University · Present"],
+    ["Higher Secondary Certificate (HSC)","Shahid Syed Nazrul Islam College (SSNIC), Mymensingh · Science · GPA 5.00","College · 2022"],
+    ["Secondary School Certificate (SSC)","Shohagi Union Higher Secondary School, Mymensingh · Science · GPA 5.00","School · 2020"]
+  ],
+  internships: [
+    {c:"Neural Semiconductor Limited",r:"Intern, Physical Design, with technical talks on the overall workflow",dt:"29 December 2025 – 02 January 2026",d:"Completed an internship at Neural Semiconductor Limited (NSL), a Bangladesh-based semiconductor design company. It was a 5-day-long industrial attachment where I learned the chip design flow, worked on layout, used some industry-grade technology and received a certificate of achievement.",tags:["VLSI","Chip Design"]},
+    {c:"Ashuganj Power Station Company Limited (APSCL)",r:"[role / department]",dt:"Upcoming February 2027",d:" ",tags:["[Skill]","[Skill]"]}
+  ],
+  experience: [
+    ["Undergraduate Thesis Researcher","Research on photonic integrated circuits using Ansys Lumerical and KLayout · RUET","August 2026 – Present"],
+    ["Executive Member — RUET IoT Club","Assistant Organizing Secretary. Organized weekly sessions and annual events and mentored the general members.","October 2023 – August 2026"],
+    ["Religious Secretary","Greater Mymensingh Association","September 2026 – Present"],
+    ["General Member","SSNIC Science Club","September 2020 – June 2022"]
+  ],
+  awards: [
+    ["Best Executive of the Year 2025","RUET IoT Club · Awarded for discipline in mentorship and management","2025"],
+    ["2nd Prize","Organized by RUET · Awarded for securing a position in the Ramadan Quran Challenge","2025"],
+    ["Regional Winner","Bangladesh Mathematical Olympiad","2022"],
+    ["Regional Winner","Bangladesh Mathematical Olympiad","2021"],
+    ["Divisional Winner","Srijonshil Medha Onhesion (SMO) · Awarded for successfully passing the Olympiad","2021"]
+  ]
+};
+/* =============================================================== */
+const P={
+github:'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12',
+linkedin:'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+youtube:'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+cap:'<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+link:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+moon:'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
+user:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+plus:'<circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>',
+pin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+cpu:'<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
+zap:'<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+layers:'<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>',
+flask:'<path d="M9 3h6M10 3v6L4 20a1 1 0 0 0 .9 1.5h14.2A1 1 0 0 0 20 20l-6-11V3"/>',
+globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>',
+code:'<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+users:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+award:'<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/>',
+gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+folder:'<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>',
+briefcase:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+power:'<path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><path d="M12 2v10"/>'};
+const FILL={github:1,linkedin:1,youtube:1};
+const icon=n=>{if(!P[n]){console.warn('Unknown icon:',n);n='gear'}return `<svg class="ic${FILL[n]?' fill':''}" viewBox="0 0 24 24" aria-hidden="true">${FILL[n]?`<path d="${P[n]}"/>`:P[n]}</svg>`};
+const $=id=>document.getElementById(id), E=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const D=DATA, ok=u=>u&&!/YOUR-/.test(u);
+const soc=[["github","GitHub",D.github],["linkedin","LinkedIn",D.linkedin],["youtube","YouTube",D.youtube],["mail","Email","mailto:"+D.email],["cap","Google Scholar",D.scholar],["link","Website",D.website]]
+  .filter(s=>s[2]).map(s=>`<a href="${E(s[2])}" ${s[2].startsWith("http")?'target="_blank" rel="noopener"':''} aria-label="${s[1]}">${icon(s[0])}</a>`).join("");
+$("hName").innerHTML=`${E(D.name[0])} <span>${E(D.name[1])}</span>`;
+$("ini").textContent=D.name.map(w=>w[0]).join("");
+$("hSub").textContent=D.subtitle; $("hLead").textContent=D.lead;
+$("hSocial").innerHTML=soc; $("fSocial").innerHTML=soc;
+$("aboutText").innerHTML=D.about.map(p=>`<p style="margin-bottom:12px">${p}</p>`).join("");
+$("facts").innerHTML=D.facts.map(f=>`<div class="fact">${icon(f[0])}<div><b>${E(f[1])}</b><span>${E(f[2])}</span></div></div>`).join("");
+$("interests").innerHTML=D.interests.map(i=>`<li>${icon(i[0])}<span>${E(i[1])}</span></li>`).join("");
+$("projList").innerHTML=D.projects.map((p,i)=>`<article class="card"><div class="thumb t${i%4}">${icon("cpu")}<img src="images/project-${i+1}.jpg" alt="" onerror="fb(this)"></div><div class="cbody"><h3>${E(p.t)}</h3><p>${E(p.d)}</p><div class="chips">${p.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div>${p.link?`<a class="more" href="${E(p.link)}" target="_blank" rel="noopener">View Project →</a>`:`<span class="more">View Project →</span>`}</div></article>`).join("");
+$("skList").innerHTML=D.skills.map((s,i)=>`<div class="skrow"><div class="tile k${i%8}">${icon(s[0])}</div><div><h4>${E(s[1])}</h4><div class="chips">${s[2].map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></div>`).join("");
+const tl=a=>a.map(e=>`<div class="ti"><div class="top"><h4>${E(e[0])}</h4><time>${E(e[2])}</time></div><p>${E(e[1])}</p></div>`).join("");
+$("eduList").innerHTML=tl(D.education); $("expList").innerHTML=tl(D.experience); $("awList").innerHTML=tl(D.awards);
+$("internList").innerHTML=D.internships.map((n,i)=>`<article class="card"><div class="thumb photo16 t${(i+1)%4}"><span>Add internship photo<br>images/internship-${i+1}.jpg</span><img src="images/internship-${i+1}.jpg" alt="Photo from my internship at ${E(n.c)}" onerror="fb(this)"></div><div class="cbody big"><span class="date">${E(n.dt)}</span><h3>${E(n.c)}</h3><span class="role">${E(n.r)}</span><p>${E(n.d)}</p><div class="chips">${n.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></article>`).join("");
+const ci=(ic,l,v)=>`<div class="ci"><span class="cico">${icon(ic)}</span><span><small>${l}</small>${v}</span></div>`;
+$("cItems").innerHTML=ci("mail","Email",`<a href="mailto:${E(D.email)}">${E(D.email)}</a>`)+ci("pin","Location",`<strong>${E(D.location)}</strong>`)+
+  ci("github","GitHub",`<a href="${E(D.github)}" target="_blank" rel="noopener">${E(D.github.replace(/^https?:\/\//,""))}</a>`)+
+  ci("linkedin","LinkedIn",`<a href="${E(D.linkedin)}" target="_blank" rel="noopener">${E(D.linkedin.replace(/^https?:\/\//,"").replace(/\/$/,""))}</a>`)+
+  (D.youtube?ci("youtube","YouTube",`<a href="${E(D.youtube)}" target="_blank" rel="noopener">${E(D.youtube.replace(/^https?:\/\//,"").replace(/\?.*$/,""))}</a>`):"");
+document.querySelectorAll("i[data-i]").forEach(el=>{el.outerHTML=icon(el.dataset.i)});
+$("copy").textContent=`© ${new Date().getFullYear()} ${D.name.join(" ")}. All rights reserved. Built with HTML, CSS & JavaScript.`;
+$("cform").addEventListener("submit",e=>{e.preventDefault();const n=$("cn").value.trim(),m=$("ce").value.trim(),t=$("cm").value.trim();
+  $("note").textContent="Opening your email app with the message filled in…";
+  location.href=`mailto:${D.email}?subject=${encodeURIComponent("Portfolio message from "+n)}&body=${encodeURIComponent(t+"\n\n— "+n+" ("+m+")")}`});
+/* theme */
+const root=document.documentElement, btn=$("theme");
+const setT=t=>{root.dataset.theme=t;btn.innerHTML=icon(t==="dark"?"sun":"moon");try{localStorage.setItem("theme",t)}catch(e){}};
+let st=null;try{st=localStorage.getItem("theme")}catch(e){}
+setT(st||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+btn.onclick=()=>setT(root.dataset.theme==="dark"?"light":"dark");
+/* active nav link */
+const links=[...document.querySelectorAll(".links a")];
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+en.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section").forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

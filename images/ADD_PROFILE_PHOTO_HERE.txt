@@ -1,0 +1,1 @@
+Place your portrait here and name it profile.jpg. Follow README.md to update the HTML.

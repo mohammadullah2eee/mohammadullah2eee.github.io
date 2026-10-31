@@ -2,7 +2,7 @@
 
 Live website: https://mohammadullah2eee.github.io
 
-A personal portfolio website built with HTML, CSS and JavaScript and hosted on GitHub Pages. All of the content lives in one place (the `DATA` block in `index.html`), so you update the website by editing text and uploading pictures. No other coding is needed.
+A personal portfolio website built with HTML, CSS and JavaScript and hosted on GitHub Pages. All of the content lives in one place (the `DATA` block in `index.html`), so you update the website by editing text and uploading pictures.
 
 ---
 
@@ -46,7 +46,7 @@ Upload pictures to the `images` folder. Use lowercase names. Both `.jpg` and `.j
 
 | Picture | File name |
 |---|---|
-| Your portrait | `profile` |
+| Portrait | `profile` |
 | Project cards, in card order | `project-1`, `project-2`, `project-3` ... |
 | Internship cards, in card order | `internship-1`, `internship-2` ... |
 | Award or certificate photos | `award-1`, `award-2` ... (you choose the names) |
@@ -63,7 +63,7 @@ Windows tip: turn on View > File name extensions in File Explorer so you do not 
 
 All templates below go inside the `DATA` block of `index.html`.
 
-### 4.1 Add a new project
+### 4.1 Adding a new project
 
 Find `projects: [`. Copy this entry and paste it after the last project. Make sure there is a comma between the entries.
 
@@ -78,7 +78,7 @@ Find `projects: [`. Copy this entry and paste it after the last project. Make su
 
 For each project, create its own GitHub repository with a `README.md` (what it is and how it works), a `BUILD_GUIDE.md` (steps to build it) and an `images` folder. Remove Wi-Fi passwords and keys from any code before uploading.
 
-### 4.2 Add a new skill
+### 4.2 Adding a new skill
 
 Find `skills: [`.
 
@@ -96,7 +96,7 @@ To add a new group:
 
 Available icon names: `code`, `cpu`, `zap`, `layers`, `flask`, `globe`, `users`, `award`, `gear`, `power`, `folder`, `briefcase`, `book`, `cap`, `user`, `pin`, `link`.
 
-### 4.3 Add new education
+### 4.3 Adding new education
 
 Find `education: [`. Put the newest entry first.
 
@@ -106,7 +106,7 @@ Find `education: [`. Put the newest entry first.
 
 Example: `["Master of Science","University name · Subject · CGPA 3.80","University · 2030"],`
 
-### 4.4 Add a new internship
+### 4.4 Adding a new internship
 
 Find `internships: [`. Copy this entry and paste it after the last one.
 
@@ -117,7 +117,7 @@ Find `internships: [`. Copy this entry and paste it after the last one.
 - Picture: `images/internship-3.jpg` for the third card and so on.
 - Do not upload photos that show confidential designs, screens with company data or your ID card. Check that the company allows you to mention the internship publicly.
 
-### 4.5 Add new experience
+### 4.5 Adding new experience
 
 Find `experience: [`. Put the newest entry first.
 
@@ -127,7 +127,7 @@ Find `experience: [`. Put the newest entry first.
 
 Use `Present` for the end date of a current role.
 
-### 4.6 Add a new award or recognition (with an optional photo)
+### 4.6 Adding a new award or recognition (with an optional photo)
 
 Find `awards: [`.
 
@@ -145,7 +145,7 @@ With a photo of the certificate or award, add a fourth item. It is the picture n
 
 Then upload `images/award-1.jpg` (or `.jpeg`). The photo appears under the award and clicking it opens it in full size. Use a different name for each award (`award-2`, `award-3` ...). If the picture is missing, nothing is shown. The same fourth item also works for education and experience entries if you want to show a certificate.
 
-### 4.7 Add a publication (new section)
+### 4.7 Adding a publication
 
 The **Publications** section sits between Experience and Contact. Until you add something, it shows a short "No publications yet" message.
 
@@ -162,7 +162,7 @@ Find `publications: [` near the end of the `DATA` block. Add an entry like this:
 
 ---
 
-## 5. Other things you can change
+## 5. Other things those can be changed
 
 | To change | Where in `DATA` |
 |---|---|

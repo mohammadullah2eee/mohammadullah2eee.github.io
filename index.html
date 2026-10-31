@@ -119,6 +119,14 @@ section{padding:72px 0}
 .ti h4{font-size:15.5px;font-weight:700}
 .ti time{font-size:13px;color:var(--s-mute);white-space:nowrap}
 .ti p{font-size:14px;color:var(--s-mute);margin-top:2px}
+.pubs{display:grid;gap:16px}
+.pub{background:var(--navy2);border:1px solid var(--ln);border-radius:10px;padding:20px 22px;display:grid;gap:6px}
+.pub h3{font-size:17px;font-weight:700;color:#fff}
+.pub p{font-size:14px;color:#a9bad0}
+.pub .meta{color:#8fc4ff;font-weight:600}
+.pub .more{color:var(--blue);font-size:13.5px;font-weight:600}
+.pub .more:hover{text-decoration:underline}
+.ti img{display:block;margin-top:10px;width:100%;max-width:220px;border-radius:8px;border:1px solid var(--s-line);cursor:zoom-in}
 /* contact */
 .cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
 .cgrid .h{margin-bottom:22px}
@@ -159,7 +167,7 @@ footer .social a{color:#c6d3e4}
 <header class="nav"><div class="wrap">
   <a class="logo" href="#home" aria-label="Mohammad Ullah, home">M<span>U</span></a>
   <nav class="links" aria-label="Main">
-    <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#internships">Internships</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#internships">Internships</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#contact">Contact</a>
   </nav>
   <button class="theme" id="theme" aria-label="Switch light or dark theme"></button>
 </div></header>
@@ -221,6 +229,11 @@ footer .social a{color:#c6d3e4}
   </div>
 </div></section>
 
+<section class="dark" id="publications"><div class="wrap">
+  <div class="h"><i data-i="book"></i><h2>Publications</h2></div>
+  <div class="pubs" id="pubList"></div>
+</div></section>
+
 <section class="deep" id="contact"><div class="wrap">
   <div class="cgrid">
     <div>
@@ -259,7 +272,7 @@ const DATA = {
   facts: [["pin","Location","Rajshahi, Bangladesh"],["cap","University","RUET"],["cap","Degree","B.Sc. in EEE"]],
   interests: [["cpu","IoT & Embedded Systems"],["layers","Photonic Integrated Circuits"],["zap","Printed Circuit Board (PCB) Design"],["flask","Research & Innovation"],["globe","Open Source & Community"]],
   projects: [
-    {t:"Mach–Zehnder Interferometer (MZI) design",d:"Designed three MZI test circuits with different arm lengths and a loopback reference in KLayout using the SiEPIC EBeam PDK and simulated all four devices.",tags:["KLayout","SiEPIC","Silicon Photonics","Simulation"],link:"https://github.com/mohammadullah2eee/mzi-klayout"},
+    {t:"Mach–Zehnder Interferometer (MZI) design",d:"Designed three MZI test circuits with different arm lengths and a loopback reference in KLayout using the SiEPIC EBeam PDK and simulated all four devices.",tags:["KLayout","SiEPIC","Silicon Photonics","Simulation"],link:"https://github.com/mohammadullah2eee/mzi-klayout"}
     {t:"Smart Fuel Station Management",d:"An ESP32-based vehicle entry/exit and capacity-monitoring prototype with sensors, servo barriers, LCD status, alarms and a web dashboard.",tags:["ESP32","IoT","Web dashboard","Sensors"],link:""},
     {t:"Smart Cart System",d:"A prototype concept combining load measurement, identification, an LCD and audio feedback to support smarter item verification and inventory tracking.",tags:["Embedded systems","Load cell","RFID concept"],link:""},
     {t:"Smart Poultry House Monitoring",d:"A low-cost monitoring concept using gas and sound sensing, local alerts and microcontrollers to help improve poultry-house awareness.",tags:["ESP32","Sensor","Embedded System","IoT"],link:""},
@@ -296,6 +309,10 @@ const DATA = {
     ["Regional Winner","Bangladesh Mathematical Olympiad","2022"],
     ["Regional Winner","Bangladesh Mathematical Olympiad","2021"],
     ["Divisional Winner","Srijonshil Medha Onhesion (SMO) · Awarded for successfully passing the Olympiad","2021"]
+  ],
+  publications: [
+    // Add your first paper here, then remove the two slashes at the start of the line:
+    // {title:"Paper title",authors:"Mohammad Ullah, Co-author Name",venue:"Journal or conference name",year:"2027",type:"Journal article",link:"https://doi.org/your-link"}
   ]
 };
 /* =============================================================== */
@@ -322,6 +339,7 @@ award:'<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9
 gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
 folder:'<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>',
 briefcase:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
 power:'<path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><path d="M12 2v10"/>'};
 const FILL={github:1,linkedin:1,youtube:1};
 const icon=n=>{if(!P[n]){console.warn('Unknown icon:',n);n='gear'}return `<svg class="ic${FILL[n]?' fill':''}" viewBox="0 0 24 24" aria-hidden="true">${FILL[n]?`<path d="${P[n]}"/>`:P[n]}</svg>`};
@@ -338,7 +356,8 @@ $("facts").innerHTML=D.facts.map(f=>`<div class="fact">${icon(f[0])}<div><b>${E(
 $("interests").innerHTML=D.interests.map(i=>`<li>${icon(i[0])}<span>${E(i[1])}</span></li>`).join("");
 $("projList").innerHTML=D.projects.map((p,i)=>`<article class="card"><div class="thumb t${i%4}">${icon("cpu")}<img src="images/project-${i+1}.jpg" alt="" onerror="fb(this)"></div><div class="cbody"><h3>${E(p.t)}</h3><p>${E(p.d)}</p><div class="chips">${p.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div>${p.link?`<a class="more" href="${E(p.link)}" target="_blank" rel="noopener">View Project →</a>`:`<span class="more">View Project →</span>`}</div></article>`).join("");
 $("skList").innerHTML=D.skills.map((s,i)=>`<div class="skrow"><div class="tile k${i%8}">${icon(s[0])}</div><div><h4>${E(s[1])}</h4><div class="chips">${s[2].map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></div>`).join("");
-const tl=a=>a.map(e=>`<div class="ti"><div class="top"><h4>${E(e[0])}</h4><time>${E(e[2])}</time></div><p>${E(e[1])}</p></div>`).join("");
+const tl=a=>a.map(e=>`<div class="ti"><div class="top"><h4>${E(e[0])}</h4><time>${E(e[2])}</time></div><p>${E(e[1])}</p>${e[3]?`<img src="images/${E(e[3])}.jpg" alt="${E(e[0])}" loading="lazy" onclick="window.open(this.src)" onerror="fb(this)">`:""}</div>`).join("");
+$("pubList").innerHTML=(D.publications&&D.publications.length)?D.publications.map(p=>`<article class="pub"><span class="date">${E(p.type||"Publication")}${p.year?" · "+E(p.year):""}</span><h3>${E(p.title)}</h3><p>${E(p.authors||"")}</p><p class="meta">${E(p.venue||"")}</p>${p.link?`<a class="more" href="${E(p.link)}" target="_blank" rel="noopener">View paper →</a>`:""}</article>`).join(""):`<div class="pub"><p>No publications yet. This section will be updated as my research progresses.</p></div>`;
 $("eduList").innerHTML=tl(D.education); $("expList").innerHTML=tl(D.experience); $("awList").innerHTML=tl(D.awards);
 $("internList").innerHTML=D.internships.map((n,i)=>`<article class="card"><div class="thumb photo16 t${(i+1)%4}"><span>Add internship photo<br>images/internship-${i+1}.jpg</span><img src="images/internship-${i+1}.jpg" alt="Photo from my internship at ${E(n.c)}" onerror="fb(this)"></div><div class="cbody big"><span class="date">${E(n.dt)}</span><h3>${E(n.c)}</h3><span class="role">${E(n.r)}</span><p>${E(n.d)}</p><div class="chips">${n.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></article>`).join("");
 const ci=(ic,l,v)=>`<div class="ci"><span class="cico">${icon(ic)}</span><span><small>${l}</small>${v}</span></div>`;

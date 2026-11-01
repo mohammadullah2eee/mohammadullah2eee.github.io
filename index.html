@@ -97,6 +97,17 @@ section{padding:72px 0}
 .chip{background:#1a2d49;color:#d2e0f2;border-radius:99px;padding:3px 11px;font-size:11.5px;font-weight:500}
 .light .chip{background:var(--s-chip);color:var(--s-chipink)}
 .card .more{margin-top:auto;padding-top:6px;color:var(--blue);font-size:13px;font-weight:600}
+.vbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:9px;align-self:flex-start;margin-top:auto;padding:10px 20px;border-radius:10px;border:1.5px solid var(--blue);background:linear-gradient(90deg,rgba(59,158,255,.22),rgba(59,158,255,.06));color:#fff;font-size:14px;font-weight:700;animation:vglow 2.4s ease-in-out infinite;transition:background .2s,color .2s,transform .2s}
+.vbtn::before{content:"";position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:vshine 3.2s ease-in-out infinite}
+.vbtn .ic{width:17px;height:17px}
+.vbtn .arr{display:inline-block;animation:vnudge 1.2s ease-in-out infinite}
+.vbtn:hover{background:var(--blue);color:#06101d;transform:translateY(-2px)}
+.vbtn.off{animation:none;border-style:dashed;border-color:#34527a;background:none;color:#8ea2bb;font-weight:600;cursor:default}
+.vbtn.off::before{display:none}
+.vbtn.off:hover{transform:none;background:none;color:#8ea2bb}
+@keyframes vglow{0%,100%{box-shadow:0 0 0 0 rgba(59,158,255,.5)}50%{box-shadow:0 0 0 8px rgba(59,158,255,0)}}
+@keyframes vshine{0%{left:-100%}55%,100%{left:150%}}
+@keyframes vnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
 .date{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .card .role{color:#8fc4ff;font-size:13.5px;font-weight:600}
 .cbody.big{padding:22px;gap:10px}.cbody.big h3{font-size:18px}.cbody.big p{font-size:14px}
@@ -148,7 +159,7 @@ textarea{min-height:110px;resize:vertical}
 footer{background:var(--deep);border-top:1px solid var(--ln);padding:26px 0 calc(26px + env(safe-area-inset-bottom,0px));font-size:13px;color:#8ea2bb}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 footer .social a{color:#c6d3e4}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.vbtn,.vbtn::before,.vbtn .arr{animation:none}}
 @media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:860px){
  .hero-grid,.about,.cgrid,.two,.grid2{grid-template-columns:1fr}
@@ -207,7 +218,7 @@ footer .social a{color:#c6d3e4}
 
 <section class="dark" id="projects"><div class="wrap">
   <div class="h"><i data-i="folder"></i><h2>Featured Projects</h2></div>
-  <div class="grid4" id="projList"></div>
+  <div class="grid2" id="projList"></div>
 </div></section>
 
 <section class="light" id="skills"><div class="wrap">
@@ -272,21 +283,20 @@ const DATA = {
   facts: [["pin","Location","Rajshahi, Bangladesh"],["cap","University","RUET"],["cap","Degree","B.Sc. in EEE"]],
   interests: [["cpu","IoT & Embedded Systems"],["layers","Photonic Integrated Circuits"],["zap","Printed Circuit Board (PCB) Design"],["flask","Research & Innovation"],["globe","Open Source & Community"]],
   projects: [
-    {t:"Mach–Zehnder Interferometer (MZI) design",d:"Designed a silicon photonic MZI layout in KLayout using the SiEPIC PDK.",tags:["KLayout","SiEPIC","Silicon Photonics"],link:"https://github.com/mohammadullah2eee/mzi-klayout"},
+    {t:"Mach–Zehnder Interferometer (MZI) design",d:"Designed and also verififed of a silicon photonic MZI layout in KLayout using the SiEPIC PDK. It is also running on a fabrication process",tags:["KLayout","SiEPIC","Silicon Photonics"],link:"https://github.com/mohammadullah2eee/mzi-klayout"},
     {t:"Smart Fuel Station Management",d:"An ESP32-based vehicle entry/exit and capacity-monitoring prototype with sensors, servo barriers, LCD status, alarms and a web dashboard.",tags:["ESP32","IoT","Web dashboard","Sensors"],link:""},
     {t:"Smart Cart System",d:"A prototype concept combining load measurement, identification, an LCD and audio feedback to support smarter item verification and inventory tracking.",tags:["Embedded systems","Load cell","RFID concept"],link:""},
     {t:"Smart Poultry House Monitoring",d:"A low-cost monitoring concept using gas and sound sensing, local alerts and microcontrollers to help improve poultry-house awareness.",tags:["ESP32","Sensor","Embedded System","IoT"],link:""},
     {t:"Line Following Robot (LFR) with Obstacle Avoidance",d:"A robot that follows a marked line path and detects and avoids obstacles on its way.",tags:["Robotics","Embedded systems","Sensors"],link:""},
-    {t:"Home Automation",d:"A home automation system I built to control household appliances automatically and conveniently.",tags:["Home automation","Embedded systems","IoT"],link:""}
+    {t:"Home Automation",d:"A home automation system I built to control household appliances automatically and conveniently using your phone or internet connected devices.",tags:["Home automation","Embedded systems","IoT"],link:""}
   ],
   skills: [
     ["code","Code & Software",["KLayout","SiEPIC PDK","MZI layout design","Ansys Lumerical","C / C++ for Arduino","Python"]],
-    ["power","Circuit & Simulation",["MATLAB","MATLAB Simulink","VISIO"]],
+    ["power","Circuit & Simulation",["MATLAB","MATLAB Simulink","MULTISIM","VISIO"]],
     ["cpu","Embedded & IoT",["ESP32 / Arduino","Sensor integration","Wi-Fi & web servers","Microcontroller projects"]],
     ["layers","Printed Circuit Board (PCB) Design", ["EasyEDA"]],
-    ["gear","VLSI Circuit Design", ["Microwind","KLayout"]],
-    ["users","Research & Collaboration",["Technical documentation","Team projects","Presentation & communication"]],
-    ["zap","Electronics",["Analog & digital circuits","Measurements & testing","LCD / I²C interfaces","Prototyping & debugging"]]
+    ["gear","VLSI Circuit Design", ["Microwind"]],
+    ["zap","Electronics",["Analog & digital circuits","Measurements & testing"]]
   ],
   education: [
     ["B.Sc. in Electrical and Electronic Engineering","Rajshahi University of Engineering & Technology (RUET) · Batch 2022","University · Present"],
@@ -294,8 +304,8 @@ const DATA = {
     ["Secondary School Certificate (SSC)","Shohagi Union Higher Secondary School, Mymensingh · Science · GPA 5.00","School · 2020"]
   ],
   internships: [
-    {c:"Neural Semiconductor Limited",r:"Intern, Physical Design, with technical talks on the overall workflow",dt:"29 December 2025 – 02 January 2026",d:"Completed an internship at Neural Semiconductor Limited (NSL), a Bangladesh-based semiconductor design company. It was a 5-day-long industrial attachment where I learned the chip design flow, worked on layout, used some industry-grade technology and received a certificate of achievement.",tags:["VLSI","Chip Design"]},
-    {c:"Ashuganj Power Station Company Limited (APSCL)",r:"[role / department]",dt:"Upcoming February 2027",d:" ",tags:["[Skill]","[Skill]"]}
+    {c:"Neural Semiconductor Limited",r:"Intern, Physical Design, with technical talks on the overall workflow",dt:"29 December 2025 – 02 January 2026",d:"Completed an internship at Neural Semiconductor Limited (NSL), a Bangladesh-based semiconductor design company. It was a 5-day-long industrial attachment where I learned the chip design flow, worked on layout, used some industry-grade technology and received a certificate of achievement.",tags:["VLSI","Chip Design"],site:"https://neural-semiconductor.com"},
+    {c:"Ashuganj Power Station Company Limited (APSCL)",r:"[role / department]",dt:"Upcoming February 2027",d:" ",tags:["[Skill]","[Skill]"],site:"https://apscl.gov.bd/"}
   ],
   experience: [
     ["Undergraduate Thesis Researcher","Research on photonic integrated circuits using Ansys Lumerical and KLayout · RUET","August 2026 – Present"],
@@ -354,12 +364,12 @@ $("hSocial").innerHTML=soc; $("fSocial").innerHTML=soc;
 $("aboutText").innerHTML=D.about.map(p=>`<p style="margin-bottom:12px">${p}</p>`).join("");
 $("facts").innerHTML=D.facts.map(f=>`<div class="fact">${icon(f[0])}<div><b>${E(f[1])}</b><span>${E(f[2])}</span></div></div>`).join("");
 $("interests").innerHTML=D.interests.map(i=>`<li>${icon(i[0])}<span>${E(i[1])}</span></li>`).join("");
-$("projList").innerHTML=D.projects.map((p,i)=>`<article class="card"><div class="thumb t${i%4}">${icon("cpu")}<img src="images/project-${i+1}.jpg" alt="" onerror="fb(this)"></div><div class="cbody"><h3>${E(p.t)}</h3><p>${E(p.d)}</p><div class="chips">${p.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div>${p.link?`<a class="more" href="${E(p.link)}" target="_blank" rel="noopener">View Project →</a>`:`<span class="more">View Project →</span>`}</div></article>`).join("");
+$("projList").innerHTML=D.projects.map((p,i)=>`<article class="card"><div class="thumb photo16 t${i%4}">${icon("cpu")}<img src="images/project-${i+1}.jpg" alt="Picture of ${E(p.t)}" onerror="fb(this)"></div><div class="cbody big"><h3>${E(p.t)}</h3><p>${E(p.d)}</p><div class="chips">${p.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div>${p.link?`<a class="vbtn" href="${E(p.link)}" target="_blank" rel="noopener">View Project <span class="arr">→</span></a>`:`<span class="vbtn off">Details coming soon</span>`}</div></article>`).join("");
 $("skList").innerHTML=D.skills.map((s,i)=>`<div class="skrow"><div class="tile k${i%8}">${icon(s[0])}</div><div><h4>${E(s[1])}</h4><div class="chips">${s[2].map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></div>`).join("");
 const tl=a=>a.map(e=>`<div class="ti"><div class="top"><h4>${E(e[0])}</h4><time>${E(e[2])}</time></div><p>${E(e[1])}</p>${e[3]?`<img src="images/${E(e[3])}.jpg" alt="${E(e[0])}" loading="lazy" onclick="window.open(this.src)" onerror="fb(this)">`:""}</div>`).join("");
 $("pubList").innerHTML=(D.publications&&D.publications.length)?D.publications.map(p=>`<article class="pub"><span class="date">${E(p.type||"Publication")}${p.year?" · "+E(p.year):""}</span><h3>${E(p.title)}</h3><p>${E(p.authors||"")}</p><p class="meta">${E(p.venue||"")}</p>${p.link?`<a class="more" href="${E(p.link)}" target="_blank" rel="noopener">View paper →</a>`:""}</article>`).join(""):`<div class="pub"><p>No publications yet. This section will be updated as my research progresses.</p></div>`;
 $("eduList").innerHTML=tl(D.education); $("expList").innerHTML=tl(D.experience); $("awList").innerHTML=tl(D.awards);
-$("internList").innerHTML=D.internships.map((n,i)=>`<article class="card"><div class="thumb photo16 t${(i+1)%4}"><span>Add internship photo<br>images/internship-${i+1}.jpg</span><img src="images/internship-${i+1}.jpg" alt="Photo from my internship at ${E(n.c)}" onerror="fb(this)"></div><div class="cbody big"><span class="date">${E(n.dt)}</span><h3>${E(n.c)}</h3><span class="role">${E(n.r)}</span><p>${E(n.d)}</p><div class="chips">${n.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div></div></article>`).join("");
+$("internList").innerHTML=D.internships.map((n,i)=>`<article class="card"><div class="thumb photo16 t${(i+1)%4}"><span>Add internship photo<br>images/internship-${i+1}.jpg</span><img src="images/internship-${i+1}.jpg" alt="Photo from my internship at ${E(n.c)}" onerror="fb(this)"></div><div class="cbody big"><span class="date">${E(n.dt)}</span><h3>${E(n.c)}</h3><span class="role">${E(n.r)}</span><p>${E(n.d)}</p><div class="chips">${n.tags.map(t=>`<span class="chip">${E(t)}</span>`).join("")}</div>${n.site?`<a class="vbtn" href="${E(n.site)}" target="_blank" rel="noopener">${icon("globe")}About Company <span class="arr">↗</span></a>`:""}</div></article>`).join("");
 const ci=(ic,l,v)=>`<div class="ci"><span class="cico">${icon(ic)}</span><span><small>${l}</small>${v}</span></div>`;
 $("cItems").innerHTML=ci("mail","Email",`<a href="mailto:${E(D.email)}">${E(D.email)}</a>`)+ci("pin","Location",`<strong>${E(D.location)}</strong>`)+
   ci("github","GitHub",`<a href="${E(D.github)}" target="_blank" rel="noopener">${E(D.github.replace(/^https?:\/\//,""))}</a>`)+

@@ -1,8 +1,9 @@
+[README.md](https://github.com/user-attachments/files/34244224/README.md)
 # Mohammad Ullah: Portfolio
 
 Live website: https://mohammadullah2eee.github.io
 
-A personal portfolio website built with HTML, CSS and JavaScript and hosted on GitHub Pages. All of the content lives in one place (the `DATA` block in `index.html`), so you update the website by editing text and uploading pictures.
+A personal portfolio website built with HTML, CSS and JavaScript and hosted on GitHub Pages. All of the content lives in one place (the `DATA` block in `index.html`).
 
 ---
 
@@ -46,7 +47,7 @@ Upload pictures to the `images` folder. Use lowercase names. Both `.jpg` and `.j
 
 | Picture | File name |
 |---|---|
-| Portrait | `profile` |
+| Your portrait | `profile` |
 | Project cards, in card order | `project-1`, `project-2`, `project-3` ... |
 | Internship cards, in card order | `internship-1`, `internship-2` ... |
 | Award or certificate photos | `award-1`, `award-2` ... (you choose the names) |
@@ -73,7 +74,7 @@ Find `projects: [`. Copy this entry and paste it after the last project. Make su
 
 - `t` is the title and `d` is the description.
 - `tags` are the small labels on the card.
-- `link` opens when someone clicks **View Project**. Use the project's GitHub repository, a YouTube video, or leave `link:""` until it is ready.
+- `link` opens when someone clicks the animated **View Project** button. Use the project's GitHub repository or a YouTube video. While `link:""` is empty, the card shows "Details coming soon" instead.
 - Picture: upload `images/project-7.jpg` (the number follows the card order).
 
 For each project, create its own GitHub repository with a `README.md` (what it is and how it works), a `BUILD_GUIDE.md` (steps to build it) and an `images` folder. Remove Wi-Fi passwords and keys from any code before uploading.
@@ -111,9 +112,10 @@ Example: `["Master of Science","University name · Subject · CGPA 3.80","Univer
 Find `internships: [`. Copy this entry and paste it after the last one.
 
 ```js
-{c:"Company name",r:"Your role or department",dt:"Month Year – Month Year",d:"What you worked on and learned. Keep it to three or four sentences.",tags:["Skill 1","Skill 2"]},
+{c:"Company name",r:"Your role or department",dt:"Month Year – Month Year",d:"What you worked on and learned. Keep it to three or four sentences.",tags:["Skill 1","Skill 2"],site:"https://company-website.com"},
 ```
 
+- `site` is the company's official website. It powers the animated **About Company** button. Leave it out if you do not want the button.
 - Picture: `images/internship-3.jpg` for the third card and so on.
 - Do not upload photos that show confidential designs, screens with company data or your ID card. Check that the company allows you to mention the internship publicly.
 
@@ -145,7 +147,7 @@ With a photo of the certificate or award, add a fourth item. It is the picture n
 
 Then upload `images/award-1.jpg` (or `.jpeg`). The photo appears under the award and clicking it opens it in full size. Use a different name for each award (`award-2`, `award-3` ...). If the picture is missing, nothing is shown. The same fourth item also works for education and experience entries if you want to show a certificate.
 
-### 4.7 Adding a publication
+### 4.7 Adding a publication 
 
 The **Publications** section sits between Experience and Contact. Until you add something, it shows a short "No publications yet" message.
 
@@ -162,7 +164,7 @@ Find `publications: [` near the end of the `DATA` block. Add an entry like this:
 
 ---
 
-## 5. Other things those can be changed
+## 5. Other things you can change
 
 | To change | Where in `DATA` |
 |---|---|

@@ -23,7 +23,7 @@ This portfolio brings together selected information about my academic journey, t
 ## Connect
 
 - **Portfolio:** [mohammadullah2eee.github.io](https://mohammadullah2eee.github.io)
-- **GitHub:** [github.com/mohammadullah2eee](https://github.com/mohammadullah2eee)
+- **Gmail:** [mohammadullah.eee@gmail.com](https://mohammadullah.eee@gmail.com)
 
 Thank you for visiting. Feel free to explore my work and connect with me.
 
